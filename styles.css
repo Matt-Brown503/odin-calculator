@@ -35,4 +35,13 @@
     border: 2px solid #ddd;
     border-radius: 4px;
     margin: 5px;
+    cursor: pointer;
+}
+
+.number-key {
+    background-color: #bcbcbc; 
+}
+
+.operator-key {
+    background-color: #898787
 }

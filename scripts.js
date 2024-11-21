@@ -6,8 +6,9 @@ const calcKeysContainer = document.querySelector('#calcKeysContainer')
 function createCalcKey(k) {
     let newKey = document.createElement('div')
     newKey.id = k
-    let classAttributes = k;
-    newKey.setAttribute('class', 'calc-key')
+    let classAttributes = (typeof k === 'string') ? 'calc-key operator-key' : 'calc-key number-key'
+    newKey.setAttribute('class', classAttributes)
+    newKey.setAttribute('value', k)
     let keySpan = document.createElement('span')
     keySpan.innerText = k
 
