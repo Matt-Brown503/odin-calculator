@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.calc {
+    background-color: #ccc;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 50px 20px;
+}
+
+.calc-screen {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    height: 70px;
+    margin-bottom: 20px;
+}
+.calc-keys-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.calc-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20%;
+    text-align: center;
+    height: 70px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin: 5px;
+}
