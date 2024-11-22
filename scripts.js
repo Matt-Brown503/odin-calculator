@@ -1,5 +1,3 @@
-console.log('connected')
-
 const calcKeyNums = [7,8,9,'+',4,5,6,'-',1,2,3,'x','c',0,'=','/']
 const calcKeysContainer = document.querySelector('#calcKeysContainer')
 const calcDisplay = document.querySelector('#calcScreen')
@@ -8,6 +6,7 @@ let number2 = []
 let operator = ''
 let result = 0
 
+// checks if keypress is an operator
 function isOperator(key) {
     if(Number.isInteger(parseInt(key))) {
         return false
@@ -15,16 +14,16 @@ function isOperator(key) {
     return true
 }
 
+// updates visual display
 function updateDisplay(val) {
     if (Array.isArray(val)) {
         calcDisplay.innerText = val.join('')
     } else {
         calcDisplay.innerText = val
     }
-    
 }
 
-
+// resets all values
 function resetVals() {
     number1 = []
     number2 = []
@@ -32,6 +31,7 @@ function resetVals() {
     result = 0
 }
 
+// equates the numbers stored and returns the final result
 function operate (num1,operator,num2) {
 
     let a = parseInt(num1.join(''))
@@ -60,7 +60,7 @@ function operate (num1,operator,num2) {
     return mathResult
 
 }
-
+// determins what kind of keypress was made and stores the values for the equation
 function registerKeyInput(e) {  
     let keyPressed = e.target.getAttribute('value')
 
@@ -92,6 +92,7 @@ function registerKeyInput(e) {
     }
 }
 
+// key creator function used to create each key
 function createCalcKey(k) {
     let newKey = document.createElement('div')
     newKey.id = k
@@ -99,15 +100,11 @@ function createCalcKey(k) {
     newKey.setAttribute('class', classAttributes)
     newKey.setAttribute('value', k)
     newKey.innerText = k
-    // let keySpan = document.createElement('span')
-    // keySpan.innerText = k
     newKey.addEventListener('click', registerKeyInput)
-    // newKey.appendChild(keySpan)
     return newKey
 }
 
-
-
+// Uses array of keys to generate calculator keys
 function initializeKeys() {
     calcKeyNums.forEach(key => {
         calcKeysContainer.appendChild(createCalcKey(key))
