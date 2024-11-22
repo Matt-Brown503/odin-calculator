@@ -112,6 +112,7 @@ function initializeKeys() {
     calcKeyNums.forEach(key => {
         calcKeysContainer.appendChild(createCalcKey(key))
     });
+    document.querySelector('#c').classList.add('clear-key')
     calcDisplay.innerText = result
     
 }
