@@ -53,7 +53,7 @@ function operate (num1,operator,num2) {
             mathResult = a * b;
             break
         case '/':
-            mathResult = a / b;
+            mathResult = (b===0) ? mathResult = 'Nope' : a / b;
             break
     }
     number1.push(mathResult)
